@@ -5,4 +5,9 @@
 直接用release中修改后的源码包替换官方的源码包，根据官方方法编译即可。
 
 方法2：
-若使用Lean Openwrt软件包中的
+若用于编译openwrt软件包，需要修改softethervpn的Makefile
+将下载地址改为release软件包的地址，hash改为release页中的sha256
+
+温馨提醒：使用openwrt编译的，注意这个项目软件是softethervpn，不是Lean Openwrt软件仓库的softethervpn5，两者一个是稳定版，一个是测试版，注意区别。
+
+已发现的问题：如果使用windows的openvpn客户端连接，需要选择tun设备，而非tap，新版的openvpn官方安装包中已包含tun设备驱动安装模块。使用tap设备会无法连接上网。
